@@ -23,6 +23,11 @@ protocol ProfileViewModelItem {
     var rowCount: Int { get }
 }
 
+
+extension ProfileViewModelItem {
+    var rowCount: Int { return 1 }
+}
+
 class ProfileViewModel: NSObject {
     var items = [ProfileViewModelItem]()
     
@@ -118,10 +123,6 @@ class ProfileViewModelNamePictureItem: ProfileViewModelItem {
         return "Main Info"
     }
     
-    var rowCount: Int {
-        return 1
-    }
-    
     var name: String
     var pictureUrl: String
     
@@ -140,10 +141,6 @@ class ProfileViewModelAboutItem: ProfileViewModelItem {
         return "About"
     }
     
-    var rowCount: Int {
-        return 1
-    }
-    
     var about: String
     
     init(about: String) {
@@ -158,10 +155,6 @@ class ProfileViewModelEmailItem: ProfileViewModelItem {
     
     var sectionTitle: String {
         return "Email"
-    }
-    
-    var rowCount: Int {
-        return 1
     }
     
     var email: String
