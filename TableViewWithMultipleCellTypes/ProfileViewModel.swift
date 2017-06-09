@@ -33,16 +33,13 @@ class ProfileViewModel: NSObject {
     
     override init() {
         super.init()
-        guard let data = dataFromFile("ServerData") else {
-            return
-        }
-        
-        guard let profile = Profile(data: data) else {
+        guard
+            let data = dataFromFile("ServerData"),
+            let profile = Profile(data: data) else {
             return
         }
         
         items = profile.setupItems(fromProfile: profile)
-        
     }
 }
 
