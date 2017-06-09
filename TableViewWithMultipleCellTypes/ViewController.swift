@@ -9,14 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     fileprivate let viewModel = ProfileViewModel()
     
     @IBOutlet weak var tableView: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTableview()
+    }
+    
+    private func setupTableview() {
         tableView?.dataSource = viewModel
         
         tableView?.estimatedRowHeight = 100
@@ -27,5 +30,6 @@ class ViewController: UIViewController {
         tableView?.register(FriendCell.nib, forCellReuseIdentifier: FriendCell.identifier)
         tableView?.register(AttributeCell.nib, forCellReuseIdentifier: AttributeCell.identifier)
         tableView?.register(EmailCell.nib, forCellReuseIdentifier: EmailCell.identifier)
+        
     }
 }
