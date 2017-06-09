@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias JSONDictionary = [String: Any]
+
 public func dataFromFile(_ filename: String) -> Data? {
     @objc class TestClass: NSObject { }
     
@@ -28,17 +30,17 @@ class Profile {
     
     init?(data: Data) {
         do {
-            if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any], let body = json["data"] as? [String: Any] {
+            if let json = try JSONSerialization.jsonObject(with: data) as? JSONDictionary, let body = json["data"] as? JSONDictionary {
                 self.fullName = body["fullName"] as? String
                 self.pictureUrl = body["pictureUrl"] as? String
                 self.about = body["about"] as? String
                 self.email = body["email"] as? String
                 
-                if let friends = body["friends"] as? [[String: Any]] {
+                if let friends = body["friends"] as? [JSONDictionary] {
                     self.friends = friends.map { Friend(json: $0) }
                 }
                 
-                if let profileAttributes = body["profileAttributes"] as? [[String: Any]] {
+                if let profileAttributes = body["profileAttributes"] as? [JSONDictionary] {
                     self.profileAttributes = profileAttributes.map { Attribute(json: $0) }
                 }
             }
@@ -87,7 +89,7 @@ class Friend {
     var name: String?
     var pictureUrl: String?
     
-    init(json: [String: Any]) {
+    init(json: JSONDictionary) {
         self.name = json["name"] as? String
         self.pictureUrl = json["pictureUrl"] as? String
     }
@@ -97,7 +99,7 @@ class Attribute {
     var key: String?
     var value: String?
     
-    init(json: [String: Any]) {
+    init(json: JSONDictionary) {
         self.key = json["key"] as? String
         self.value = json["value"] as? String
     }
