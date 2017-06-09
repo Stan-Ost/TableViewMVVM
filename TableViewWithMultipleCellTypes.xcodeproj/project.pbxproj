@@ -25,6 +25,7 @@
 		36C0EC911EB00C4A0039B330 /* ServerData.json in Resources */ = {isa = PBXBuildFile; fileRef = 36C0EC901EB00C4A0039B330 /* ServerData.json */; };
 		36C0EC931EB00C710039B330 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0EC921EB00C710039B330 /* ProfileModel.swift */; };
 		36C0EC951EB00E290039B330 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0EC941EB00E290039B330 /* ProfileViewModel.swift */; };
+		CFB17DC11EEB34CF00C437D2 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFB17DC01EEB34CF00C437D2 /* Protocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		36C0EC901EB00C4A0039B330 /* ServerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ServerData.json; sourceTree = "<group>"; };
 		36C0EC921EB00C710039B330 /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		36C0EC941EB00E290039B330 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		CFB17DC01EEB34CF00C437D2 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				36C0EC7E1EB00BFC0039B330 /* AppDelegate.swift */,
 				36C0EC801EB00BFC0039B330 /* ViewController.swift */,
 				36C0EC901EB00C4A0039B330 /* ServerData.json */,
+				CFB17DC21EEB34D300C437D2 /* Protocols */,
 				36C0EC821EB00BFC0039B330 /* Main.storyboard */,
 				36C0EC851EB00BFC0039B330 /* Assets.xcassets */,
 				36C0EC871EB00BFC0039B330 /* LaunchScreen.storyboard */,
@@ -109,6 +112,14 @@
 				36C0EC941EB00E290039B330 /* ProfileViewModel.swift */,
 			);
 			path = TableViewWithMultipleCellTypes;
+			sourceTree = "<group>";
+		};
+		CFB17DC21EEB34D300C437D2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CFB17DC01EEB34CF00C437D2 /* Protocols.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +206,7 @@
 				367B20181ED20BC0000F2BFA /* AttributeCell.swift in Sources */,
 				36C0EC811EB00BFC0039B330 /* ViewController.swift in Sources */,
 				36C0EC951EB00E290039B330 /* ProfileViewModel.swift in Sources */,
+				CFB17DC11EEB34CF00C437D2 /* Protocols.swift in Sources */,
 				36C0EC7F1EB00BFC0039B330 /* AppDelegate.swift in Sources */,
 				367B200C1ED204B2000F2BFA /* NamePictureCell.swift in Sources */,
 				367B201C1ED211F3000F2BFA /* EmailCell.swift in Sources */,

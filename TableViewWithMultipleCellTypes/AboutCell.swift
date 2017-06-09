@@ -8,25 +8,17 @@
 
 import UIKit
 
-class AboutCell: UITableViewCell {
-
+class AboutCell: UITableViewCell, ReusableView {
+    
     @IBOutlet weak var aboutLabel: UILabel?
     
     var item: ProfileViewModelItem? {
         didSet {
-            guard  let item = item as? ProfileViewModelAboutItem else {
+            guard let item = item as? ProfileViewModelAboutItem else {
                 return
             }
             
             aboutLabel?.text = item.about
         }
-    }
-    
-    static var nib:UINib {
-        return UINib(nibName: identifier, bundle: nil)
-    }
-    
-    static var identifier: String {
-        return String(describing: self)
     }
 }

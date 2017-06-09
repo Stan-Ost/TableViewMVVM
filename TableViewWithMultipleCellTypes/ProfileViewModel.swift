@@ -74,28 +74,28 @@ extension ProfileViewModel: UITableViewDataSource {
         let item = items[indexPath.section]
         switch item.type {
         case .nameAndPicture:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: NamePictureCell.identifier, for: indexPath) as? NamePictureCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: NamePictureCell.reuseIdentifier, for: indexPath) as? NamePictureCell {
                 cell.item = item
                 return cell
             }
         case .about:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: AboutCell.identifier, for: indexPath) as? AboutCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: AboutCell.reuseIdentifier, for: indexPath) as? AboutCell {
                 cell.item = item
                 return cell
             }
         case .email:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: EmailCell.identifier, for: indexPath) as? EmailCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: EmailCell.reuseIdentifier, for: indexPath) as? EmailCell {
                 cell.item = item
                 return cell
             }
         case .friend:
-            if let item = item as? ProfileViewModeFriendsItem, let cell = tableView.dequeueReusableCell(withIdentifier: FriendCell.identifier, for: indexPath) as? FriendCell {
+            if let item = item as? ProfileViewModeFriendsItem, let cell = tableView.dequeueReusableCell(withIdentifier: FriendCell.reuseIdentifier, for: indexPath) as? FriendCell {
                 let friend = item.friends[indexPath.row]
                 cell.item = friend
                 return cell
             }
         case .attribute:
-            if let item = item as? ProfileViewModeAttributeItem, let cell = tableView.dequeueReusableCell(withIdentifier: AttributeCell.identifier, for: indexPath) as? AttributeCell {
+            if let item = item as? ProfileViewModeAttributeItem, let cell = tableView.dequeueReusableCell(withIdentifier: AttributeCell.reuseIdentifier, for: indexPath) as? AttributeCell {
                 cell.item = item.attributes[indexPath.row]
                 return cell
             }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmailCell: UITableViewCell {
+class EmailCell: UITableViewCell, ReusableView {
 
     @IBOutlet weak var emailLabel: UILabel?
     
@@ -20,13 +20,5 @@ class EmailCell: UITableViewCell {
             
             emailLabel?.text = item.email
         }
-    }
-
-    static var nib:UINib {
-        return UINib(nibName: identifier, bundle: nil)
-    }
-    
-    static var identifier: String {
-        return String(describing: self)
     }
 }

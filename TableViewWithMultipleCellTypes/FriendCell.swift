@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendCell: UITableViewCell {
+class FriendCell: UITableViewCell, ReusableView {
 
     @IBOutlet weak var pictureImageView: UIImageView?
     @IBOutlet weak var nameLabel: UILabel?
@@ -25,14 +25,6 @@ class FriendCell: UITableViewCell {
             
             nameLabel?.text = item.name
         }
-    }
-    
-    static var nib:UINib {
-        return UINib(nibName: identifier, bundle: nil)
-    }
-    
-    static var identifier: String {
-        return String(describing: self)
     }
     
     override func awakeFromNib() {

@@ -25,11 +25,11 @@ class ViewController: UIViewController {
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableViewAutomaticDimension
         
-        tableView?.register(AboutCell.nib, forCellReuseIdentifier: AboutCell.identifier)
-        tableView?.register(NamePictureCell.nib, forCellReuseIdentifier: NamePictureCell.identifier)
-        tableView?.register(FriendCell.nib, forCellReuseIdentifier: FriendCell.identifier)
-        tableView?.register(AttributeCell.nib, forCellReuseIdentifier: AttributeCell.identifier)
-        tableView?.register(EmailCell.nib, forCellReuseIdentifier: EmailCell.identifier)
+        tableView?.register(AboutCell.nib, forCellReuseIdentifier: AboutCell.reuseIdentifier)
+        tableView?.register(NamePictureCell.nib, forCellReuseIdentifier: NamePictureCell.reuseIdentifier)
+        tableView?.register(FriendCell.nib, forCellReuseIdentifier: FriendCell.reuseIdentifier)
+        tableView?.register(AttributeCell.nib, forCellReuseIdentifier: AttributeCell.reuseIdentifier)
+        tableView?.register(EmailCell.nib, forCellReuseIdentifier: EmailCell.reuseIdentifier)
         
     }
 }
