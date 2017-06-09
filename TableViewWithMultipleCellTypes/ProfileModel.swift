@@ -47,6 +47,40 @@ class Profile {
             return nil
         }
     }
+    
+    func setupItems(fromProfile profile: Profile) -> [ProfileViewModelItem] {
+        var items = [ProfileViewModelItem]()
+        
+        if let name = profile.fullName, let pictureUrl = profile.pictureUrl {
+            let nameAndPictureItem = ProfileViewModelNamePictureItem(name: name, pictureUrl: pictureUrl)
+            items.append(nameAndPictureItem)
+        }
+        
+        if let about = profile.about {
+            let aboutItem = ProfileViewModelAboutItem(about: about)
+            items.append(aboutItem)
+        }
+        
+        if let email = profile.email {
+            let dobItem = ProfileViewModelEmailItem(email: email)
+            items.append(dobItem)
+        }
+        
+        let attributes = profile.profileAttributes
+        if !attributes.isEmpty {
+            let attributesItem = ProfileViewModeAttributeItem(attributes: attributes)
+            items.append(attributesItem)
+        }
+        
+        let friends = profile.friends
+        if !profile.friends.isEmpty {
+            let friendsItem = ProfileViewModeFriendsItem(friends: friends)
+            items.append(friendsItem)
+        }
+        
+        return items
+    }
+
 }
 
 class Friend {
